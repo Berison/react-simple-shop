@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState, type ReactNode } from "react";
+import { createContext, useReducer, type ReactNode } from "react";
 import type { CartContextValue } from "../../../shared/types/cart-context-value";
 import type { CartState } from "../../../shared/types/cart-state";
 import { DUMMY_PRODUCTS } from "../../../assets/dummy-products";
