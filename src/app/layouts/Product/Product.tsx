@@ -1,14 +1,17 @@
+import { useContext } from "react";
+import { CartContext } from "../../../features/cart/model/cart.context";
 import type { Product } from "../../../shared/types/products";
 
-type ProductProps = { onAddToCart: (id: string) => void } & Product;
+type ProductProps = Product;
 
 export default function Product({
   id,
   title,
   price,
   description,
-  onAddToCart,
 }: ProductProps) {
+  const { addItemToCart } = useContext(CartContext);
+
   return (
     <article className="product">
       <div className="product-content">
@@ -18,7 +21,7 @@ export default function Product({
           <p>{description}</p>
         </div>
         <p className="product-actions">
-          <button onClick={() => onAddToCart(id)}>Add to Cart</button>
+          <button onClick={() => addItemToCart(id)}>Add to Cart</button>
         </p>
       </div>
     </article>
